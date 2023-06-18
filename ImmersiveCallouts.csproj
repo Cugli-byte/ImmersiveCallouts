@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="LSPD First Response">
+      <HintPath>..\References\LSPD First Response.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RagePluginHook">
+      <HintPath>..\References\RagePluginHookSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AmbientEvents\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;C:\Users\bebcu\OneDrive\Desktop\LSPDFR Callouts\ImmersiveCallouts\bin\Debug\net48\ImmersiveCallouts.dll&quot; &quot;D:\Program Files\Epic Games\GTAV\plugins\LSPDFR\ImmersiveCallouts.dll&quot; /y&#xD;&#xA;" />
+  </Target>
+
+</Project>
